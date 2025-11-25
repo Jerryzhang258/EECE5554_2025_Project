@@ -67,7 +67,7 @@ class ApproachControllerNode(Node):
         )
         
         # ✅ 修复：直接发布到底盘订阅的话题
-        self.cmd_vel_pub = self.create_publisher(Twist, '/cmd_vel', 10)
+        self.cmd_vel_pub = self.create_publisher(Twist, '/cmd_vel_unstamped', 10)
         
         # Control loop
         self.control_timer = self.create_timer(0.1, self.control_loop)
